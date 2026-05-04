@@ -183,7 +183,7 @@ const UsersList = ({ setItemEdit, itemEdit }) => {
                           <div className="flex items-center gap-3">
                             {item.users_is_active == 1 ? (
                               <>
-                                {/* edit */}
+                                {/* edit
                                 <button
                                   type="button"
                                   className="tooltip-action-table"
@@ -191,7 +191,7 @@ const UsersList = ({ setItemEdit, itemEdit }) => {
                                   onClick={() => handleEdit(item)}
                                 >
                                   <FaEdit />
-                                </button>
+                                </button> */}
                                 {/* archive */}
                                 <button
                                   type="button"

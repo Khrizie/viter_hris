@@ -65,3 +65,11 @@ export const GetFocus = (id) => {
     obj.focus();
   }, []);
 };
+// get the url id parameter
+export const getUrlParam = (id) => {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  // const param = urlParams.get(id);
+  // return param;
+  return urlParams;
+};

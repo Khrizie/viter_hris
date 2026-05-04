@@ -2,7 +2,8 @@
 
 //set http header
 require '../../../../core/header.php';
-// use needed funcions
+require '../../../../core/Encryption.php';
+// use needed functions
 require '../../../../core/functions.php';
 // use models
 require '../../../../models/developers/settings/users/Users.php';

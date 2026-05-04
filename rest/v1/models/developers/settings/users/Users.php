@@ -8,6 +8,7 @@ class Users
     public $users_email;
     public $users_last_name;
     public $users_password;
+    public $users_key;
     public $users_role_id;
     public $users_created;
     public $users_updated;
@@ -38,6 +39,7 @@ class Users
             $sql .= " users_last_name, ";
             $sql .= " users_email, ";
             $sql .= " users_password, ";
+            $sql .= " users_key, ";
             $sql .= " users_role_id, ";
             $sql .= " users_created, ";
             $sql .= " users_updated ";
@@ -47,6 +49,7 @@ class Users
             $sql .= " :users_last_name, ";
             $sql .= " :users_email, ";
             $sql .= " :users_password, ";
+            $sql .= " :users_key, ";
             $sql .= " :users_role_id, ";
             $sql .= " :users_created, ";
             $sql .= " :users_updated ";
@@ -58,6 +61,7 @@ class Users
                 "users_last_name" => $this->users_last_name,
                 "users_email" => $this->users_email,
                 "users_password" => $this->users_password,
+                "users_key" => $this->users_key,
                 "users_role_id" => $this->users_role_id,
                 "users_created" => $this->users_created,
                 "users_updated" => $this->users_updated,
@@ -92,9 +96,10 @@ class Users
                 $params["users_is_active"] = $this->users_is_active;
             }
             if ($this->search) {
-                $params["users_first_name"] = "%{$this->search}%";
-                $params["users_last_name"] = "%{$this->search}%";
-                $params["users_email"] = "%{$this->search}%";
+                $params["employee_first_name"] = "%{$this->search}%";
+                $params["employee_middle_name"] = "%{$this->search}%";
+                $params["employee_last_name"] = "%{$this->search}%";
+                $params["employee_email"] = "%{$this->search}%";
             }
             $query->execute($params);
         } catch (PROException $e) {
@@ -164,6 +169,55 @@ class Users
         }
         return $query;
     }
+
+    public function setPassword()
+    {
+        try {
+            $sql = " update {$this->tblSettingsUsers} set ";
+            $sql .= " users_key = '', ";
+            $sql .= " users_password = :users_password, ";
+            $sql .= " users_updated = :users_updated ";
+            $sql .= " where users_key = :users_key ";
+            $query = $this->connection->prepare($sql);
+            $query->execute([
+                "users_password" => $this->users_password,
+                "users_updated" => $this->users_updated,
+                "users_key" => $this->users_key,
+            ]);
+        } catch (PDOException $e) {
+            // returnError($e); turn on when debugging
+            $query = false;
+        }
+        return $query;
+    }
+
+    public function readKey()
+    {
+        try {
+            $sql = " select * from {$this->tblSettingsUsers} ";
+            $sql .= " where users_key = :users_key ";
+            $query = $this->connection->prepare($sql);
+            $query->execute([
+                "users_key" => $this->users_key,
+            ]);
+        } catch (PDOException $e) {
+            // returnError($e); turn on when debugging
+            $query = false;
+        }
+        return $query;
+    }
+    
+    //             "users_email" => $this->users_email,
+    //             "users_role_id" => $this->users_role_id,
+    //             "users_updated" => $this->users_updated,
+    //             "users_key" => $this->users_key,
+    //         ]);
+    //     } catch (PDOException $e) {
+    //         // returnError($e); turn on when debugging
+    //         $query = false;
+    //     }
+    //     return $query;
+    // }
     public function active()
     {
         try {

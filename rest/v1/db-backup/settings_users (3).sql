@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2026 at 09:39 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Generation Time: May 04, 2026 at 02:11 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,19 +44,12 @@ CREATE TABLE `settings_users` (
 --
 
 INSERT INTO `settings_users` (`users_aid`, `users_is_active`, `users_first_name`, `users_last_name`, `users_email`, `users_role_id`, `users_password`, `users_created`, `users_updated`) VALUES
-(1, 1, 'asd', 'asd', 'asdas@adsa', '21', '', '2026-04-20 12:04:48', '2026-04-20 12:04:48'),
-(2, 1, 'aaaaaaaa@asdsa', 'adada', 'asdsda@asds', '24', '', '2026-04-20 12:04:24', '2026-04-20 12:04:24'),
-(3, 1, 'asd', 'ads', 'asdas@sadds', '24', '', '2026-04-20 12:04:28', '2026-04-20 12:04:28'),
-(4, 1, 'as', 'ads', 'das@sad', '24', '', '2026-04-20 12:04:01', '2026-04-20 12:04:01'),
-(5, 1, 'as', 'asd', 'assda@asd', '24', '', '2026-04-20 12:04:07', '2026-04-20 12:04:07'),
-(6, 1, 'ad', 'asd', 'asd@ads', '24', '', '2026-04-20 13:04:37', '2026-04-20 13:04:37'),
-(7, 1, 'ad', 'ads', 'asd@asd', '24', '', '2026-04-20 13:04:49', '2026-04-20 13:04:49'),
-(8, 1, 'asd', 'das', 'as@sd', '25', '', '2026-04-20 13:04:25', '2026-04-20 13:04:25'),
-(9, 1, 'asd', 'ads', 'ads@sd', '24', '', '2026-04-20 13:04:37', '2026-04-20 13:04:37'),
-(10, 1, 'as', 'asd', 'as@sdsada', '24', '', '2026-04-20 14:04:38', '2026-04-20 14:04:38'),
-(11, 1, 'asd', 'asd', 'ads@sad', '25', '', '2026-04-20 14:04:08', '2026-04-20 14:04:08'),
-(12, 0, 'sad', 'ads', 'das@dsa', '24', '', '2026-04-20 14:04:05', '2026-04-20 14:04:05'),
-(13, 1, 'jhonas', 'asd', 'asd@gmailcom', '24', '', '2026-04-20 15:04:34', '2026-04-20 15:04:34');
+(1, 1, 'gartbow', 'asdasd', 'adadad@gmail.com', '17', '', '2026-04-20 14:25:43', '2026-04-20 15:03:36'),
+(2, 1, 'chloe', 'asdasd', 'adadad@gmail.com', '17', '', '2026-04-20 14:27:37', '2026-04-20 14:27:37'),
+(3, 1, 'jervie', 'asdasd', 'adadad@gmail.com', '17', '', '2026-04-20 14:27:55', '2026-04-20 14:27:55'),
+(4, 1, 'Moises', 'asdasd', 'sdgsgsdgsdg@gmail.com', '13', '', '2026-04-20 14:31:54', '2026-04-20 14:31:54'),
+(5, 1, 'chlowwwe', 'asdasd', 'aala@gmail.com', '17', '', '2026-04-20 15:01:57', '2026-04-20 15:01:57'),
+(6, 1, 'khrizie maeren', 'de silos', 'khrizie@gmail.com', '17', '', '2026-04-27 09:04:13', '2026-04-27 09:04:13');
 
 --
 -- Indexes for dumped tables
@@ -76,7 +69,7 @@ ALTER TABLE `settings_users`
 -- AUTO_INCREMENT for table `settings_users`
 --
 ALTER TABLE `settings_users`
-  MODIFY `users_aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `users_aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

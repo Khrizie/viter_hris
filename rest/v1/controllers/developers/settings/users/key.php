@@ -1,0 +1,32 @@
+<?php
+
+//set http header
+require '../../../../core/header.php';
+// use needed functions
+require '../../../../core/functions.php';
+// use models
+require '../../../../models/developers/settings/users/Users.php';
+
+$conn = null;
+$conn = checkDBConnection();
+
+//models
+
+$val = new Users ($conn);
+//get payload
+$body = file_get_contents("php://input");
+$data = json_decode($body, true);
+if(isset($_SERVER['HTTP_AUTHORIZATION'])){
+//validate
+// checkPayload($data);
+if(array_key_exists('key', $_GET)){
+    $val->users_key = $_GET['key'];
+    $query = checkReadKey($val);
+    http_response_code(200);
+    getQueriedData($query);
+}
+checkEndpoint();
+}
+
+http_response_code(200);
+checkAccess();

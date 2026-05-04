@@ -112,6 +112,7 @@ const ModalAddUsers = ({ itemEdit, filterArrayActiveRoles }) => {
             }}
           >
             {(props) => {
+              console.log(props);
               return (
                 <Form className="h-full">
                   <div className="modal-form-container">
@@ -194,7 +195,9 @@ const ModalAddUsers = ({ itemEdit, filterArrayActiveRoles }) => {
                   </div>
                 </Form>
               );
+
             }}
+            
           </Formik>
         </div>
       </ModalWrapperSide>
